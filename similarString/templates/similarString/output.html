@@ -1,0 +1,35 @@
+<head>
+{% load static %}
+
+  <meta charset="utf-8">
+  <title>Output</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'similarString/css/main.css' %}">
+  
+
+</head>
+<body>
+  <h1>Synonymically suitable sentence</h1>
+  <div class="container">
+
+    <div class="col">
+      <div class="row" style="text-align: center"> <strong>Input 1</strong> </div>
+      {% for sentence in sentence1 %}
+      <div class="row"> {{ sentence|safe }} </div>
+      {% endfor %}
+    </div>
+    <div class="col">
+      <div class="row" style="text-align: center"> <strong>Input 2</strong> </div>
+      {% for sentence in sentence2 %}
+      <div class="row"> {{ sentence|safe }} </div>
+      {% endfor %}
+    </div>
+    <div class="col">
+      <div class="row" style="text-align: center"> <strong>Synonymically suitable sentence from Input 2</strong> </div>
+      <div class="row"> {{ similarSentence|safe }} </div> 
+    </div>
+
+  </div>
+</body> 
+

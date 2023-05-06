@@ -1,0 +1,22 @@
+.container{display:flex}
+.row{
+  height:30px;
+  padding:4px
+}
+
+.element-that-contains-columns{
+ display:flex;
+}
+.row-in-col {
+height : @some-fixed-height;
+}
+
+
+@foreach (var i in Model)
+    {
+div.column
+ @foreach (var set in i)
+    {
+   div.row-in-col
+    } 
+}

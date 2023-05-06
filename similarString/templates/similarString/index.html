@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>Comparing similar sentence</title>
+</head>
+  
+<body>
+    <form action = "findSimilar/" method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="your_string">Your String to compare: </label>
+        <input required id="your_string" type="text" value="HC:Unsafe condition: Access not provided in the excavation for ingress/egress" name="your_string">
+        <input type="submit" value="Compare">
+    
+
+
+    <input required type="file" name="inputfile"
+                id="inputfile" accept=".txt">
+        <br>
+       
+        <pre id="output"></pre>
+    </form>
+    <script type="text/javascript">
+        document.getElementById('inputfile')
+            .addEventListener('change', function() {
+              
+            var fr=new FileReader();
+            fr.onload=function(){
+                document.getElementById('output')
+                        .textContent=fr.result;
+            }
+              
+            fr.readAsText(this.files[0]);
+        })
+    </script>
+
+</body>
+  
+</html>
